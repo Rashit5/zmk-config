@@ -7,14 +7,16 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/ext_power.h>
 
+// Define the Studio unlock combo
 / {
     combos {
         compatible = "zmk,combos";
         combo_studio_unlock {
             timeout-ms = <50>;
-            key-positions = <53 54 55>;
+            key-positions = <36 37 38>; // Left thumb keys
             bindings = <&studio_unlock>;
         };
     };
@@ -27,7 +29,18 @@
         };
     };
 
-
+    keymap {
+        compatible = "zmk,keymap";
+        
+        default_layer {
+            bindings = <
+                // Your existing keymap here
+                // Make sure to include &studio_unlock in an accessible position
+                // Example: Add it to a layer or combo
+            >;
+        };
+    };
+};
 
 / {
     keymap {
