@@ -10,8 +10,6 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/ext_power.h>
 
-&studio_unlock
-
 // Define the Studio unlock combo
 / {
     combos {
