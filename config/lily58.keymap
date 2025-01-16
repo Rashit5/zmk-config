@@ -36,6 +36,7 @@
         
         default_layer {
             bindings = <
+            &studio_unlock
                 // Your existing keymap here
                 // Make sure to include &studio_unlock in an accessible position
                 // Example: Add it to a layer or combo
