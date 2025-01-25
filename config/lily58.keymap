@@ -16,57 +16,42 @@
     };
 
     // Добавляем секцию макросов здесь
+
     macros {
         // Базовая проверка ошибки
+
         ZM_err_check: err_check {
             label = "ZM_err_check";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <
-                &kp I &kp F &kp SPACE &kp E &kp R &kp R &kp SPACE &kp EXCL &kp EQUAL &kp SPACE &kp N &kp I &kp L &kp SPACE &kp LBRC 
-                &kp RET
-                &kp TAB &kp R &kp E &kp T &kp U &kp R &kp N &kp SPACE &kp E &kp R &kp R
-                &kp RET 
-                &kp RBRC
-            >;
+            bindings = <&kp I &kp F &kp SPACE &kp E &kp R &kp R &kp SPACE &kp EXCL &kp EQUAL &kp SPACE &kp N &kp I &kp L &kp SPACE &kp LBRC &kp RET &kp TAB &kp R &kp E &kp T &kp U &kp R &kp N &kp SPACE &kp E &kp R &kp R &kp RET &kp RBRC>;
         };
 
         // Функция main
+
         ZM_main: main_func {
             label = "ZM_main";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <
-                &kp F &kp U &kp N &kp C &kp SPACE &kp M &kp A &kp I &kp N &kp LPAR &kp RPAR &kp SPACE &kp LBRC
-                &kp RET
-                &kp TAB
-                &kp RET
-                &kp RBRC
-            >;
+            bindings = <&kp F &kp U &kp N &kp C &kp SPACE &kp M &kp A &kp I &kp N &kp LPAR &kp RPAR &kp SPACE &kp LBRC &kp RET &kp TAB &kp RET &kp RBRC>;
         };
 
         // Быстрый вывод
+
         ZM_print: print_ln {
             label = "ZM_print";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <
-                &kp F &kp M &kp T &kp DOT &kp P &kp R &kp I &kp N &kp T &kp L &kp N &kp LPAR &kp DQT &kp DQT &kp RPAR
-            >;
+            bindings = <&kp F &kp M &kp T &kp DOT &kp P &kp R &kp I &kp N &kp T &kp L &kp N &kp LPAR &kp DQT &kp DQT &kp RPAR>;
         };
 
         // Горутина
+
         ZM_goroutine: goroutine {
             label = "ZM_goroutine";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <
-                &kp G &kp O &kp SPACE &kp F &kp U &kp N &kp C &kp LPAR &kp RPAR &kp SPACE &kp LBRC
-                &kp RET
-                &kp TAB
-                &kp RET
-                &kp RBRC &kp LPAR &kp RPAR
-            >;
+            bindings = <&kp G &kp O &kp SPACE &kp F &kp U &kp N &kp C &kp LPAR &kp RPAR &kp SPACE &kp LBRC &kp RET &kp TAB &kp RET &kp RBRC &kp LPAR &kp RPAR>;
         };
     };
 
@@ -74,40 +59,46 @@
 
     keymap {
         compatible = "zmk,keymap";
-        
+
         default_layer {
             // Оставляем как есть
+
             bindings = <
-&kp ESC         &kp N1      &kp N2      &kp N3       &kp N4        &kp N5                           &kp N6  &kp N7                                &kp N8         &kp N9      &kp N0         &kp GRAVE
-&kp TAB         &kp Q       &kp W       &kp E        &kp R         &kp T                            &kp Y   &kp U                                 &kp I          &kp O       &kp P          &kp MINUS
-&kp LEFT_SHIFT  &hm LGUI A  &hm LALT S  &hm LCTRL D  &hm LSHIFT F  &kp G                            &kp H   &hm RSHIFT J                          &hm RCTRL K    &hm RALT L  &hm RGUI SEMI  &kp SQT
-&kp LCTRL       &kp Z       &kp X       &kp C        &kp V         &kp B   &kp LBKT     &kp RBKT    &kp N   &kp M                                 &kp COMMA      &kp DOT     &kp FSLH       &kp RSHFT
-                                        &kp LALT     &kp LEFT_GUI  &mo 1   &kp SPACE    &kp RETURN  &mo 2   &kp C_AC_NEXT_KEYBOARD_LAYOUT_SELECT  &kp BACKSPACE
+&kp ESC         &kp N1      &kp N2      &kp N3       &kp N4        &kp N5                           &kp N6  &kp N7                                        &kp N8         &kp N9      &kp N0         &kp GRAVE
+&kp TAB         &kp Q       &kp W       &kp E        &kp R         &kp T                            &kp Y   &kp U                                         &kp I          &kp O       &kp P          &kp MINUS
+&kp LEFT_SHIFT  &hm LGUI A  &hm LALT S  &hm LCTRL D  &hm LSHIFT F  &kp G                            &kp H   &hm RSHIFT J                                  &hm RCTRL K    &hm RALT L  &hm RGUI SEMI  &kp SQT
+&kp LCTRL       &kp Z       &kp X       &kp C        &kp V         &kp B   &kp LBKT     &kp RBKT    &kp N   &kp M                                         &kp COMMA      &kp DOT     &kp FSLH       &kp RSHFT
+                                        &kp LALT     &kp LEFT_GUI  &mo 1   &kp SPACE    &kp RETURN  &mo 2   &kp LA(LS(C_AC_NEXT_KEYBOARD_LAYOUT_SELECT))  &kp BACKSPACE
             >;
+
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         lower_layer {
             // Обновляем lower layer с макросами
+
             bindings = <
-&trans     &ZM_main      &ZM_print     &ZM_goroutine  &kp LS(N4)    &kp LS(N5)                      &kp LS(N6)   &kp LS(N7)   &kp LS(N8)   &kp LS(N9)   &kp LS(N0)   &trans
-&trans     &ZM_err_check &kp EQUAL     &kp LPAR      &kp RPAR      &kp STAR                        &kp CARET    &kp AMPS     &kp ASTRK    &kp LPAR     &kp RPAR     &trans
-&trans     &kp SEMI      &kp MINUS     &kp LBKT      &kp RBKT      &kp PLUS                        &kp PIPE     &kp LT       &kp GT       &kp LBRC     &kp RBRC     &trans
-&trans     &kp BSLH      &kp FSLH      &kp LBRC      &kp RBRC      &kp UNDER    &trans    &trans   &kp QMARK    &kp MINUS    &kp PLUS     &kp EQUAL    &kp BSLH     &trans
-                                       &trans        &trans        &trans       &trans    &trans   &trans       &trans       &trans
+&trans  &ZM_main       &ZM_print  &ZM_goroutine  &kp LS(N4)  &kp LS(N5)                    &kp LS(N6)  &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &kp LS(N0)  &trans
+&trans  &ZM_err_check  &kp EQUAL  &kp LPAR       &kp RPAR    &kp STAR                      &kp CARET   &kp AMPS    &kp ASTRK   &kp LPAR    &kp RPAR    &trans
+&trans  &kp SEMI       &kp MINUS  &kp LBKT       &kp RBKT    &kp PLUS                      &kp PIPE    &kp LT      &kp GT      &kp LBRC    &kp RBRC    &trans
+&trans  &kp BSLH       &kp FSLH   &kp LBRC       &kp RBRC    &kp UNDER   &trans    &trans  &kp QMARK   &kp MINUS   &kp PLUS    &kp EQUAL   &kp BSLH    &trans
+                                  &trans         &trans      &trans      &trans    &trans  &trans      &trans      &trans
             >;
+
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         raise_layer {
             // Оставляем как есть
+
             bindings = <
-&trans           &kp F1          &kp F2        &kp F3        &kp F4        &kp F5                          &kp F6         &kp F7         &kp F8         &kp F9        &kp F10       &kp F11
-&trans           &kp EXCL        &kp AT        &kp HASH      &kp DOLLAR    &kp PRCNT                       &bt BT_CLR     &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans           &kp GRAVE       &kp TILDE     &kp COLON     &kp SEMI      &kp PLUS                        &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT     &kp DEL       &trans
-&trans           &kp LCTRL       &kp LALT      &kp LGUI      &kp LSHIFT    &kp MINUS     &trans    &trans  &kp HOME       &kp PG_DN      &kp PG_UP      &kp END       &trans        &trans
-                                              &trans        &trans        &trans        &trans    &trans  &trans         &trans         &trans
+&trans  &kp F1     &kp F2     &kp F3     &kp F4      &kp F5                       &kp F6      &kp F7        &kp F8        &kp F9        &kp F10       &kp F11
+&trans  &kp EXCL   &kp AT     &kp HASH   &kp DOLLAR  &kp PRCNT                    &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &kp GRAVE  &kp TILDE  &kp COLON  &kp SEMI    &kp PLUS                     &kp LEFT    &kp DOWN      &kp UP        &kp RIGHT     &kp DEL       &trans
+&trans  &kp LCTRL  &kp LALT   &kp LGUI   &kp LSHIFT  &kp MINUS  &trans    &trans  &kp HOME    &kp PG_DN     &kp PG_UP     &kp END       &trans        &trans
+                              &trans     &trans      &trans     &trans    &trans  &trans      &trans        &trans
             >;
+
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
