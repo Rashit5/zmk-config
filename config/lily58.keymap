@@ -56,7 +56,7 @@
 &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans        &trans        &trans        &kp SLASH                           &bt BT_CLR       &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp N7        &kp NUMBER_8  &kp N4        &kp ASTERISK                        &kp PRINTSCREEN  &trans          &trans        &trans        &trans        &trans
 &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp N4        &kp NUMBER_5  &kp NUMBER_6  &kp MINUS                           &kp LEFT_ARROW   &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT     &trans        &trans
-&trans                &trans                 &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PLUS      &trans    &trans      &kp KP_PLUS      &kp MINUS       &kp EQUAL     &kp LBKT      &kp RBKT      &kp BSLH
+&kp DOUBLE_QUOTES     &kp SQT                &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PLUS      &trans    &trans      &kp KP_PLUS      &kp MINUS       &kp EQUAL     &kp LBKT      &kp RBKT      &kp BSLH
                                                            &trans        &kp NUMBER_0  &trans        &trans    &kp RETURN  &trans           &trans          &trans
             >;
 
